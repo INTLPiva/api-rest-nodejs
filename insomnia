@@ -1,0 +1,134 @@
+type: collection.insomnia.rest/5.0
+name: api-rest-nodejs
+meta:
+  id: wrk_bdf6009b7ece419caeea0ba7c448b2b9
+  created: 1758543405171
+  modified: 1758543405171
+  description: ""
+collection:
+  - name: Transactions
+    meta:
+      id: fld_2293c15ee46145a88f63db3e9cc59d7e
+      created: 1758550324577
+      modified: 1758550324577
+      sortKey: -1758550324577
+      description: ""
+    children:
+      - url: http://localhost:3333/transactions
+        name: List transactions
+        meta:
+          id: req_1a05de6dbcb1490d9486eea8bc62b97f
+          created: 1758550311779
+          modified: 1758551081116
+          isPrivate: false
+          description: ""
+          sortKey: -1758550327045
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3333/transactions
+        name: Create transaction
+        meta:
+          id: req_aefed6e0a6a3411eb42a96bd0a90a4a3
+          created: 1758550834425
+          modified: 1758552508029
+          isPrivate: false
+          description: ""
+          sortKey: -1743365373124.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"title": "Hmburger",
+            	"amount": 4000,
+            	"type": "debit"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3333/transactions/74bb1fec-14a6-44d0-a323-963d758d753d
+        name: Get transaction
+        meta:
+          id: req_6cad36290a5742a383430196332ab6eb
+          created: 1758551078245
+          modified: 1758552520189
+          isPrivate: false
+          description: ""
+          sortKey: -1750957850084.75
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3333/transactions/summary
+        name: Get summary
+        meta:
+          id: req_206221685feb41e7933bde5cf36f9ee6
+          created: 1758551180881
+          modified: 1758551184294
+          isPrivate: false
+          description: ""
+          sortKey: -1754754088564.875
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_cde31abb9615d944e6bf28b3e1f9a8b6b8cda785
+    created: 1758543405178
+    modified: 1758552496690
+  cookies:
+    - key: sessionId
+      value: e50aef8b-b058-4486-9b07-01dc0c1b8b8b
+      maxAge: 604800
+      domain: localhost
+      path: /
+      hostOnly: true
+      creation: 2025-09-22T14:48:16.690Z
+      lastAccessed: 2025-09-22T14:48:16.690Z
+      sameSite: lax
+      id: 55eb1691-bb77-4f63-81e4-1b86f39607ff
+environments:
+  name: Base Environment
+  meta:
+    id: env_cde31abb9615d944e6bf28b3e1f9a8b6b8cda785
+    created: 1758543405174
+    modified: 1758543405174
+    isPrivate: false
