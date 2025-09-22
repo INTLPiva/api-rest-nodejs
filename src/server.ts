@@ -1,16 +1,18 @@
 import fastify from "fastify";
-import { knex } from "./database";
+import cookie from "@fastify/cookie";
+
 import { env } from "./env";
+import { transactionsRoutes } from "./routes/transactions";
 
 const app = fastify();
 
-app.get("/hello", async () => {
-  const transactions = await knex("transactions")
-    .where("amount", 5000)
-    .select("*");
+app.register(cookie);
 
-  return transactions;
+app.addHook("preHandler", async (request, reply) => {
+  console.log(`[${request.method}] ${request.url}`);
 });
+
+app.register(transactionsRoutes, { prefix: "transactions" });
 
 app.listen({ port: env.PORT }).then(() => {
   console.log("HTTP Server Running!");
